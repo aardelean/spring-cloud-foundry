@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: eurekaserver
+  memory: 512MB
+  buildpack: java_buildpack
+  path: build/libs/eureka-server-1.0.jar
+  host: cloud-es
+  profiles:
+      active: dev

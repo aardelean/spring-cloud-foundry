@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE"
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.3.0.RELEASE'
+    }
+}
+
+group 'cloud'
+version '1.0-SNAPSHOT'
+
+apply plugin: "io.spring.dependency-management"
+
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+
+compileJava {
+    sourceCompatibility = '1.8'
+}
+
+project.ext.springBoot = '1.3.0.RELEASE'
+project.ext.springCloud = 'Brixton.M3'
+project.ext.mainClassName = 'home.app.direct.Starter'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-starter-parent:Brixton.M3'
+    }
+}
+dependencies {
+    compile 'io.undertow:undertow-servlet:1.2.11.Final'
+    compile ('io.undertow:undertow-core:1.2.11.Final'){
+        exclude module: 'jboss-logging'
+    }
+    compile 'org.springframework.boot:spring-boot-starter'
+    compile 'org.springframework.boot:spring-boot-starter-web:'+springBoot
+    compile 'org.springframework.boot:spring-boot-starter-actuator:'+springBoot
+
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.cloud:spring-cloud-config-server'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
