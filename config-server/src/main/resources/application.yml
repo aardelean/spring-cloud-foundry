@@ -2,24 +2,15 @@ server:
   port: 9000
 
 spring:
-  application:
-    name: configserver
   cloud:
-    server:
-      git:
-        uri: https://github.com/aardelean/config-server
-      health:
-        repositories:
-          eureka:
-            label: master
+    config:
+      server:
+        git:
+          uri: https://github.com/aardelean/config-server
+        health:
+          repositories:
+            eureka:
+              label: master
   profiles:
     active: dev
 
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

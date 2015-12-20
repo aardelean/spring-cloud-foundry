@@ -3,5 +3,5 @@ applications:
 - name: cloud-eureka-server
   memory: 512MB
   buildpack: java_buildpack
-  path: build/libs/eureka-server-1.0.jar
+  path: build/libs/config-server-1.0.jar
   host: cloud-es

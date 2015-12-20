@@ -10,8 +10,6 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 @EnableAutoConfiguration
 @EnableConfigServer
-//@EnableEurekaServer
-//@EnableDiscoveryClient
 public class Starter {
     public static void main(String[] args){
         new SpringApplicationBuilder(Starter.class).web(true).build().run(args);

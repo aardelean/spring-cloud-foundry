@@ -45,8 +45,6 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:'+springBoot
     compile 'org.springframework.boot:spring-boot-starter-actuator:'+springBoot
 
-    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
-    compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
     compile 'org.springframework.cloud:spring-cloud-starter-config'
     compile 'org.springframework.cloud:spring-cloud-config-server'
 

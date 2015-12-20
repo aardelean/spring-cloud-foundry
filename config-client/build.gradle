@@ -45,7 +45,6 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:'+springBoot
     compile 'org.springframework.boot:spring-boot-starter-actuator:'+springBoot
 
-    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
     compile 'org.springframework.cloud:spring-cloud-starter-config:1.1.0.M3'
     compile 'org.springframework.cloud:spring-cloud-config-client:1.1.0.M3'
 
