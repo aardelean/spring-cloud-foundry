@@ -7,3 +7,12 @@ spring:
   host: cloud-es
   profiles:
       active: dev
+server:
+  port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

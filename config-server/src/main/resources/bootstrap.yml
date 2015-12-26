@@ -1,3 +1,18 @@
+server:
+  port: 9001
+
 spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/aardelean/config-server
+        health:
+          repositories:
+            eureka:
+              label: master
+  profiles:
+    active: dev
   application:
     name: configserver
+

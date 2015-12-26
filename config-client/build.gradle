@@ -23,7 +23,7 @@ compileJava {
 
 project.ext.springBoot = '1.3.0.RELEASE'
 project.ext.springCloud = 'Brixton.M3'
-project.ext.mainClassName = 'home.app.direct.Starter'
+project.ext.mainClassName = 'home.app.direct.ClientStarter'
 
 repositories {
     jcenter()
@@ -45,6 +45,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:'+springBoot
     compile 'org.springframework.boot:spring-boot-starter-actuator:'+springBoot
 
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
     compile 'org.springframework.cloud:spring-cloud-starter-config:1.1.0.M3'
     compile 'org.springframework.cloud:spring-cloud-config-client:1.1.0.M3'
 
